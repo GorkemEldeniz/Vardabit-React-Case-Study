@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/products/:id",
+      "destination": "/products/:id"
+    },
+    {
+      "source": "/products",
+      "destination": "/products"
+    }
+  ]
+}
