@@ -11,15 +11,20 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": [
+    "*.{js,jsx,ts,tsx,json,css}": [
       "prettier --write --ignore-unknown",
       "eslint --fix"
     ]
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
+    "axios": "^1.7.9",
     "commitizen": "^4.3.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-query": "^3.39.3",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

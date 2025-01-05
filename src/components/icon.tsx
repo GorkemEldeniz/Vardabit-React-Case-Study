@@ -1,4 +1,10 @@
-export type IconName = "moon" | "sun" | "computer";
+export type IconName =
+  | "moon"
+  | "sun"
+  | "computer"
+  | "search"
+  | "portfeil"
+  | "profile";
 
 interface IconProps extends React.ComponentPropsWithoutRef<"svg"> {
   name: IconName;

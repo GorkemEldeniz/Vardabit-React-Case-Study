@@ -17,6 +17,7 @@ const ThemeController = () => {
       "data-theme",
       selectedTheme === "system" ? (isDark ? "dark" : "light") : selectedTheme
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDark]);
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,10 +34,10 @@ const ThemeController = () => {
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn m-1">
         {selectedTheme === "system" && (
-          <Icon className="size-5" name="computer" />
+          <Icon className="size-4" name="computer" />
         )}
-        {selectedTheme === "light" && <Icon className="size-5" name="sun" />}
-        {selectedTheme === "dark" && <Icon className="size-5" name="moon" />}
+        {selectedTheme === "light" && <Icon className="size-4" name="sun" />}
+        {selectedTheme === "dark" && <Icon className="size-4" name="moon" />}
       </div>
       <ul
         tabIndex={0}
@@ -47,7 +48,7 @@ const ThemeController = () => {
             htmlFor="system"
             className="theme-controller btn btn-md btn-block btn-ghost"
           >
-            <Icon className="size-5" name="computer" />
+            <Icon className="size-4" name="computer" />
           </label>
           <input
             type="radio"
@@ -63,7 +64,7 @@ const ThemeController = () => {
             htmlFor="light"
             className="theme-controller btn btn-md btn-block btn-ghost"
           >
-            <Icon className="size-5" name="sun" />
+            <Icon className="size-4" name="sun" />
           </label>
           <input
             type="radio"
@@ -79,7 +80,7 @@ const ThemeController = () => {
             htmlFor="dark"
             className="theme-controller btn btn-md btn-block btn-ghost"
           >
-            <Icon className="size-5" name="moon" />
+            <Icon className="size-4" name="moon" />
           </label>
           <input
             type="radio"
