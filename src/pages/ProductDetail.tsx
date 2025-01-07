@@ -1,3 +1,4 @@
+import NotFound from "@/components/not-found";
 import { addItem } from "@/libs/redux/features/cart/cartSlice";
 import { fetchProductById } from "@/services/product";
 import { useQuery } from "react-query";
@@ -14,6 +15,8 @@ function ProductDetail() {
     isLoading,
     isError,
   } = useQuery(["product", params], () => fetchProductById(params.id || ""));
+
+  if (isError || !product) return <NotFound className="text-lg" />;
 
   if (isLoading)
     return (

@@ -3,6 +3,7 @@ import { fetchProducts } from "@/services/product";
 import { useQuery } from "react-query";
 import { useDispatch } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router";
+import NotFound from "./not-found";
 import PaginationBar from "./pagination-bar";
 
 export type Product = {
@@ -83,14 +84,6 @@ const ProductListSkeleton = () => {
   );
 };
 
-const ProductListNotFound = () => {
-  return (
-    <h1 className="text-lg col-span-1 md:col-span-2 lg:col-span-4">
-      🤔 Sorry, we couldn't find any data to display.
-    </h1>
-  );
-};
-
 const ProductList = () => {
   const [searchParams] = useSearchParams();
 
@@ -104,7 +97,7 @@ const ProductList = () => {
 
   if (isLoading) return <ProductListSkeleton />;
 
-  if (isError || !products?.length) return <ProductListNotFound />;
+  if (isError || !products?.length) return <NotFound className="text-lg" />;
 
   const hidePagination = products?.length < 10;
 
