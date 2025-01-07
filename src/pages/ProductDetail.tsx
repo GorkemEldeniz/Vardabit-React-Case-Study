@@ -15,12 +15,29 @@ function ProductDetail() {
     isError,
   } = useQuery(["product", params], () => fetchProductById(params.id || ""));
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-4 py-2 px-4 bg-base-100 shadow-md rounded-lg">
+        <figure className="flex-shrink-0">
+          <img
+            src="https://placehold.co/640x480"
+            className="rounded-lg"
+            alt="placeholder"
+          />
+        </figure>
+        <div className="flex flex-col gap-4">
+          <div className="h-6 w-[20ch] bg-gray-200 animate-pulse rounded" />
+          <div className="h-4 w-[10ch] bg-gray-200 animate-pulse rounded" />
+          <div className="btn btn-md bg-gray-200 animate-pulse rounded" />
+          <div className="h-[240px] bg-gray-200 animate-pulse rounded" />
+        </div>
+      </div>
+    );
 
   if (isError) return <div>Error...</div>;
 
   return (
-    <div className="flex-1 flex gap-4 py-2 px-4 bg-base-100 shadow-md rounded-lg">
+    <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-4 py-2 px-4 bg-base-100 shadow-md rounded-lg">
       <figure className="flex-shrink-0">
         <img src={product?.image} alt={product?.name} className="rounded-lg" />
       </figure>

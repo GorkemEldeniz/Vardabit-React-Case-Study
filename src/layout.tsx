@@ -13,9 +13,11 @@ const Layout = () => {
       <QueryClientProvider client={queryClient}>
         <main className="max-w-screen-2xl mx-auto w-full h-screen">
           <Header />
-          <div className="flex gap-7 py-4">
+          <div className="md:flex md:gap-7 py-4">
             <Outlet />
-            <Cart />
+            <div className="hidden md:block relative ml-auto min-w-60">
+              <Cart />
+            </div>
           </div>
         </main>
       </QueryClientProvider>

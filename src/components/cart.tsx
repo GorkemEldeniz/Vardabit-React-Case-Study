@@ -16,48 +16,46 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="relative ml-auto min-w-60">
-      <div className="sticky inset-0 card bg-base-100 shadow-md py-2 px-4 space-y-4">
-        <h2 className="card-title">Cart</h2>
+    <div className="sticky inset-0 card max-h-52 overflow-y-scroll bg-base-100 shadow-md py-2 px-4 space-y-4">
+      <h2 className="card-title">Cart</h2>
 
-        {cartItems.map((cart, id) => (
-          <div key={id}>
-            <div className="flex gap-4 items-center justify-between">
-              <h3>{cart.name}</h3>
-              <div className="flex border rounded-btn items-center">
-                <button
-                  onClick={() => dispatch(decreaseCountByOne(cart.name))}
-                  className="btn btn-xs sm:btn-sm"
-                >
-                  -
-                </button>
-                <span className="mx-2">{cart.count}</span>
-                <button
-                  onClick={() => dispatch(increaseCountByOne(cart.name))}
-                  className="btn btn-xs sm:btn-sm"
-                >
-                  +
-                </button>
-              </div>
+      {cartItems.map((cart, id) => (
+        <div key={id}>
+          <div className="flex gap-4 items-center justify-between">
+            <h3>{cart.name}</h3>
+            <div className="flex border rounded-btn items-center">
+              <button
+                onClick={() => dispatch(decreaseCountByOne(cart.name))}
+                className="btn btn-xs sm:btn-sm"
+              >
+                -
+              </button>
+              <span className="mx-2">{cart.count}</span>
+              <button
+                onClick={() => dispatch(increaseCountByOne(cart.name))}
+                className="btn btn-xs sm:btn-sm"
+              >
+                +
+              </button>
             </div>
-            <h3 className="text-gray-500">
-              {cart.price.toLocaleString("tr", {
-                style: "currency",
-                currency: "TRY",
-              })}
-            </h3>
           </div>
-        ))}
+          <h3 className="text-gray-500">
+            {cart.price.toLocaleString("tr", {
+              style: "currency",
+              currency: "TRY",
+            })}
+          </h3>
+        </div>
+      ))}
 
-        <p>
-          Total Price:{" "}
-          {totalPrice.toLocaleString("tr", {
-            style: "currency",
-            currency: "TRY",
-          })}
-        </p>
-        <button className="btn btn-sm btn-primary mt-4">Checkout</button>
-      </div>
+      <p>
+        Total Price:{" "}
+        {totalPrice.toLocaleString("tr", {
+          style: "currency",
+          currency: "TRY",
+        })}
+      </p>
+      <button className="btn btn-sm btn-primary mt-4">Checkout</button>
     </div>
   );
 };

@@ -31,8 +31,8 @@ const ThemeController = () => {
   };
 
   return (
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn m-1">
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-sm md:btn-md m-1">
         {selectedTheme === "system" && (
           <Icon className="size-4" name="computer" />
         )}
@@ -46,7 +46,7 @@ const ThemeController = () => {
         <li>
           <label
             htmlFor="system"
-            className="theme-controller btn btn-md btn-block btn-ghost"
+            className="theme-controller btn btn-sm md:btn-md btn-block btn-ghost"
           >
             <Icon className="size-4" name="computer" />
           </label>
@@ -62,7 +62,7 @@ const ThemeController = () => {
         <li>
           <label
             htmlFor="light"
-            className="theme-controller btn btn-md btn-block btn-ghost"
+            className="theme-controller btn btn-sm md:btn-md btn-block btn-ghost"
           >
             <Icon className="size-4" name="sun" />
           </label>
@@ -78,7 +78,7 @@ const ThemeController = () => {
         <li>
           <label
             htmlFor="dark"
-            className="theme-controller btn btn-md btn-block btn-ghost"
+            className="theme-controller btn btn-sm md:btn-md btn-block btn-ghost"
           >
             <Icon className="size-4" name="moon" />
           </label>
