@@ -28,7 +28,14 @@ const ProductItem = ({ name, image, price, id }: Product) => {
       className="card card-compact card-bordered bg-base-100 shadow-md cursor-pointer"
     >
       <figure>
-        <img src={image} alt={name} />
+        <img
+          src={image}
+          alt={name}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = "https://placehold.co/640x480";
+          }}
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>

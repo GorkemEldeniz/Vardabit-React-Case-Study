@@ -16,7 +16,7 @@ function ProductDetail() {
     isError,
   } = useQuery(["product", params], () => fetchProductById(params.id || ""));
 
-  if (isError || !product) return <NotFound className="text-lg" />;
+  if (isError) return <NotFound className="text-lg" />;
 
   if (isLoading)
     return (
@@ -28,11 +28,11 @@ function ProductDetail() {
             alt="placeholder"
           />
         </figure>
-        <div className="flex flex-col gap-4">
+        <div className="flex-1 flex flex-col gap-4">
           <div className="h-6 w-[20ch] bg-gray-200 animate-pulse rounded" />
           <div className="h-4 w-[10ch] bg-gray-200 animate-pulse rounded" />
-          <div className="btn btn-md bg-gray-200 animate-pulse rounded" />
-          <div className="h-[240px] bg-gray-200 animate-pulse rounded" />
+          <div className="w-full btn btn-md bg-gray-200 animate-pulse rounded" />
+          <div className="h-[240px] md:mt-auto bg-gray-200 animate-pulse rounded" />
         </div>
       </div>
     );
@@ -42,7 +42,15 @@ function ProductDetail() {
   return (
     <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-4 py-2 px-4 bg-base-100 shadow-md rounded-lg">
       <figure className="flex-shrink-0">
-        <img src={product?.image} alt={product?.name} className="rounded-lg" />
+        <img
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = "https://placehold.co/640x480";
+          }}
+          src={product?.image}
+          alt={product?.name}
+          className="rounded-lg"
+        />
       </figure>
       <div className="flex flex-col gap-4">
         <header>
