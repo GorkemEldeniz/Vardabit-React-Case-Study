@@ -1,6 +1,7 @@
 import ProductFilter from "@/components/product-filter";
 import ProductList from "@/components/product-list";
 import SortBy from "@/components/sortby";
+import { ScrollRestoration } from "react-router";
 
 function Products() {
   return (
@@ -12,6 +13,7 @@ function Products() {
         </div>
       </div>
       <ProductList />
+      <ScrollRestoration />
     </div>
   );
 }
