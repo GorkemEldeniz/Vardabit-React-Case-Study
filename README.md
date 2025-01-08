@@ -89,5 +89,5 @@ Bu proje MIT Lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 Herhangi bir sorunuz varsa, lütfen iletişime geçin:
 
-- **İsim**: Adınız
-- **E-posta**: your.email@example.com
+- **İsim**: Görkem
+- **E-posta**: gorkemeldeniz30@gmail.com
